@@ -93,9 +93,35 @@ a {
   letter-spacing: 0.02em;
   font-size: 15px;
 }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 .nav-links {
   display: flex;
   gap: 26px;
+}
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lang-toggle button {
+  padding: 5px 11px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+.lang-toggle button.active {
+  background: var(--fg);
+  color: #fff;
 }
 .nav-links a {
   font-size: 14px;
@@ -325,6 +351,42 @@ footer[id] {
 .project-link.muted {
   color: var(--faint);
   font-weight: 500;
+}
+
+.tag-fun {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px dashed var(--faint);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-left: 10px;
+}
+
+/* ---- n8n backend figure ---- */
+.n8n-figure {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.n8n-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+.n8n-figure figcaption {
+  margin-top: 10px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  color: var(--faint);
 }
 
 /* ---- turtle svg ---- */
