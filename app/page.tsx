@@ -14,8 +14,8 @@ const STACK_BADGES = [
 ];
 
 // ⬇️ แก้ 2 บรรทัดนี้เป็นข้อมูลจริงของคุณก่อน deploy
-const YOUR_NAME = "ชื่อของคุณ";
-const YOUR_EMAIL = "your-email@example.com";
+const YOUR_NAME = "Nattapoom Prikmak";
+const YOUR_EMAIL = "folkkizx@gmail.com";
 
 export default function Home() {
   return (

@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
   {
     name: "Cha Phranakhon (ชาพระนคร)",
     tagline: "แพลตฟอร์ม SaaS จัดการแฟรนไชส์แบบ multi-tenant",
-    live: "",
+    live: "https://chaphranakhon.com/",
     problem:
       "เชนแฟรนไชส์ต้องการระบบเดียวที่รองรับ 4 บทบาท (ลูกค้า/พาร์ทเนอร์/แอดมิน/Kiosk) จัดการสาขา ออเดอร์ สต็อก และการตลาดพร้อมกัน",
     role: [
@@ -69,7 +69,7 @@ export const PROJECTS: Project[] = [
   {
     name: "BGEZ",
     tagline: "แอปติดตาม & วิเคราะห์วงบอร์ดเกมแบบ real-time",
-    live: "",
+    live: "https://bgez.space/",
     problem:
       "กลุ่มเล่นบอร์ดเกมอยากบันทึกผลแพ้-ชนะ จับคู่ผู้เล่น และดูสถิติแบบสด ผ่าน QR/ห้องเรียลไทม์",
     role: [
