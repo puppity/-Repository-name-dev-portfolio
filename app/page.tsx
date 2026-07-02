@@ -5,7 +5,7 @@ import { PROJECTS, STACK_MATCH, type Project } from "@/lib/projects";
 
 // ⬇️ ข้อมูลจริง
 const YOUR_NAME = "Nattapoom Prikmak";
-const YOUR_EMAIL = "folkkizx@gmail.com";
+const CONTACT = { name: "Nattapoom P.", age: "29", tel: "08394563998" };
 
 const STACK = [
   "Next.js",
@@ -90,7 +90,7 @@ export default function Home() {
           <nav className="nav-links">
             <a href="#work">Work</a>
             <a href="#demo">Demo</a>
-            <a href={`mailto:${YOUR_EMAIL}`}>Contact</a>
+            <a href="#contact">Contact</a>
           </nav>
         </div>
       </header>
@@ -124,7 +124,7 @@ export default function Home() {
               <a className="btn ghost" href="#demo">
                 ลองเดโม AI
               </a>
-              <a className="btn ghost" href={`mailto:${YOUR_EMAIL}`}>
+              <a className="btn ghost" href="#contact">
                 ติดต่อ
               </a>
             </div>
@@ -138,7 +138,7 @@ export default function Home() {
           <Reveal>
             <div className="section-head">
               <h2>Selected Work</h2>
-              <span className="num">04 — PROJECTS</span>
+              <span className="num">05 — PROJECTS</span>
             </div>
           </Reveal>
           <div className="work">
@@ -221,14 +221,29 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="footer">
+      <footer className="footer" id="contact">
         <div className="wrap">
           <Reveal>
             <h2 className="foot-name">พร้อมมาช่วยสร้างแพลตฟอร์ม AI ให้ทีมครับ</h2>
-            <div className="contact">
-              <span className="who">{YOUR_NAME}</span>
-              <a className="btn primary" href={`mailto:${YOUR_EMAIL}`}>
-                {YOUR_EMAIL}
+            <div className="contact-info">
+              <div>
+                <span className="ci-label">Name</span>
+                <span className="ci-val">{CONTACT.name}</span>
+              </div>
+              <div>
+                <span className="ci-label">Age</span>
+                <span className="ci-val">{CONTACT.age}</span>
+              </div>
+              <div>
+                <span className="ci-label">Tel</span>
+                <a className="ci-val" href={`tel:${CONTACT.tel}`}>
+                  {CONTACT.tel}
+                </a>
+              </div>
+            </div>
+            <div className="cta-row">
+              <a className="btn primary" href={`tel:${CONTACT.tel}`}>
+                โทรหาผม
               </a>
             </div>
             <p className="fine">

@@ -50,6 +50,25 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    name: "ReadAgain (readagainpodcast.com)",
+    tagline: "แพลตฟอร์มสรุปหนังสือด้วยวิดีโอ/พอดแคสต์ ภาษาไทย",
+    live: "https://readagainpodcast.com/",
+    problem:
+      "คนอยากอ่านหนังสือดี ๆ แต่ไม่มีเวลา — ต้องการที่รวมสรุปหนังสือแบบวิดีโอ/เสียง ดูง่าย ค้นหาไว จัดหมวดหมู่ชัดเจน",
+    role: [
+      "พัฒนาเว็บ full-stack (Next.js) + ระบบจัดการคอนเทนต์ฝั่งแอดมิน",
+      "ระบบหมวดหมู่ / แนะนำ / คอนเทนต์ล่าสุด + ค้นหา",
+      "รองรับ 2 ภาษา (ไทย/อังกฤษ) + แชร์ social (FB / X / Threads / LINE)",
+      "Deploy บน Coolify (Nixpacks)",
+    ],
+    stack: ["Next.js", "CMS / Admin", "i18n (TH/EN)", "Coolify"],
+    highlights: [
+      "เว็บจริงออนไลน์ readagainpodcast.com",
+      "ระบบแอดมินจัดการคอนเทนต์เอง",
+      "โครงสร้างคอนเทนต์หลายหมวด + ระบบค้นหา",
+    ],
+  },
+  {
     name: "UniClip",
     tagline: "คลังความรู้ cross-platform ที่ค้นด้วยความหมาย (semantic search)",
     live: "",
