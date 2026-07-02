@@ -1,111 +1,111 @@
 export type Listing = {
   id: number;
   title: string;
-  type: "คอนโด" | "บ้านเดี่ยว" | "ทาวน์โฮม";
+  type: "Condo" | "House" | "Townhome";
   zone: string;
   zoneKeys: string[];
-  price: number; // บาท/เดือน (เช่า)
+  price: number; // THB / month (rent)
   bedrooms: number;
-  area: number; // ตร.ม.
-  tags: string[]; // ไลฟ์สไตล์/จุดเด่น
+  area: number; // sqm
+  tags: string[]; // lifestyle / highlights — labels here must match the keyword labels below
   nearBTS: boolean;
 };
 
 export const LISTINGS: Listing[] = [
   {
     id: 1,
-    title: "คอนโด Ideo สุขุมวิท ติด BTS อ่อนนุช",
-    type: "คอนโด",
-    zone: "สุขุมวิท / อ่อนนุช",
-    zoneKeys: ["สุขุมวิท", "อ่อนนุช", "sukhumvit", "onnut", "bts", "รถไฟฟ้า"],
+    title: "Ideo Sukhumvit Condo — steps from BTS On Nut",
+    type: "Condo",
+    zone: "Sukhumvit / On Nut",
+    zoneKeys: ["sukhumvit", "on nut", "onnut", "bts", "transit", "train"],
     price: 18000,
     bedrooms: 1,
     area: 32,
-    tags: ["ติดรถไฟฟ้า", "มีฟิตเนส", "สระว่ายน้ำ", "สัตว์เลี้ยงไม่ได้", "เหมาะคนทำงาน", "เดินทางสะดวก"],
+    tags: ["Near transit", "Gym", "Pool", "Great for professionals", "Easy commute"],
     nearBTS: true,
   },
   {
     id: 2,
-    title: "บ้านเดี่ยว 3 ห้องนอน ย่านบางนา มีสวน",
-    type: "บ้านเดี่ยว",
-    zone: "บางนา",
-    zoneKeys: ["บางนา", "bangna", "ชานเมือง"],
+    title: "Detached house with garden, Bangna",
+    type: "House",
+    zone: "Bangna",
+    zoneKeys: ["bangna", "suburb"],
     price: 35000,
     bedrooms: 3,
     area: 180,
-    tags: ["มีสวน", "ที่จอดรถ 2 คัน", "เลี้ยงสัตว์ได้", "เหมาะครอบครัว", "เงียบสงบ", "โรงเรียนใกล้"],
+    tags: ["Has garden", "2 parking spaces", "Pet-friendly", "Family-friendly", "Quiet", "Near school"],
     nearBTS: false,
   },
   {
     id: 3,
-    title: "ทาวน์โฮม 2 ห้องนอน รัชดา ใกล้ MRT",
-    type: "ทาวน์โฮม",
-    zone: "รัชดาภิเษก",
-    zoneKeys: ["รัชดา", "ratchada", "mrt", "รถไฟฟ้า", "ห้วยขวาง"],
+    title: "2-bedroom townhome, Ratchada — near MRT",
+    type: "Townhome",
+    zone: "Ratchada",
+    zoneKeys: ["ratchada", "mrt", "transit", "train", "huai khwang"],
     price: 22000,
     bedrooms: 2,
     area: 110,
-    tags: ["ใกล้รถไฟฟ้า", "เลี้ยงสัตว์ได้", "ที่จอดรถ", "เหมาะครอบครัวเล็ก", "ใกล้ตลาด"],
+    tags: ["Near transit", "Pet-friendly", "Parking", "Family-friendly", "Near market"],
     nearBTS: true,
   },
   {
     id: 4,
-    title: "คอนโดสตูดิโอ ราคาประหยัด ลาดพร้าว",
-    type: "คอนโด",
-    zone: "ลาดพร้าว",
-    zoneKeys: ["ลาดพร้าว", "ladprao", "mrt", "รถไฟฟ้า"],
+    title: "Budget studio condo, Ladprao",
+    type: "Condo",
+    zone: "Ladprao",
+    zoneKeys: ["ladprao", "mrt", "transit"],
     price: 9500,
     bedrooms: 1,
     area: 24,
-    tags: ["ราคาประหยัด", "ใกล้รถไฟฟ้า", "เหมาะนักศึกษา", "เหมาะเริ่มทำงาน", "เฟอร์นิเจอร์ครบ"],
+    tags: ["Budget-friendly", "Near transit", "Great for students", "Fully furnished"],
     nearBTS: false,
   },
   {
     id: 5,
-    title: "คอนโดหรู 2 ห้องนอน ทองหล่อ วิวเมือง",
-    type: "คอนโด",
-    zone: "ทองหล่อ",
-    zoneKeys: ["ทองหล่อ", "thonglor", "สุขุมวิท", "bts", "รถไฟฟ้า"],
+    title: "Luxury 2-bedroom condo, Thonglor — city view",
+    type: "Condo",
+    zone: "Thonglor",
+    zoneKeys: ["thonglor", "sukhumvit", "bts", "transit"],
     price: 55000,
     bedrooms: 2,
     area: 75,
-    tags: ["หรูหรา", "ติดรถไฟฟ้า", "วิวสวย", "เลี้ยงสัตว์ได้", "ฟิตเนส", "co-working", "เหมาะคนทำงานสาย"],
+    tags: ["Luxury", "Near transit", "Great view", "Pet-friendly", "Gym", "Co-working"],
     nearBTS: true,
   },
   {
     id: 6,
-    title: "บ้านเดี่ยว 4 ห้องนอน นนทบุรี ราชพฤกษ์",
-    type: "บ้านเดี่ยว",
-    zone: "นนทบุรี / ราชพฤกษ์",
-    zoneKeys: ["นนทบุรี", "ราชพฤกษ์", "nonthaburi", "ชานเมือง"],
+    title: "4-bedroom detached house, Nonthaburi / Ratchaphruek",
+    type: "House",
+    zone: "Nonthaburi / Ratchaphruek",
+    zoneKeys: ["nonthaburi", "ratchaphruek", "suburb"],
     price: 45000,
     bedrooms: 4,
     area: 240,
-    tags: ["มีสวน", "ที่จอดรถ 3 คัน", "เลี้ยงสัตว์ได้", "เหมาะครอบครัวใหญ่", "เงียบสงบ", "หมู่บ้านมี รปภ."],
+    tags: ["Has garden", "3 parking spaces", "Pet-friendly", "Family-friendly", "Quiet", "Gated community"],
     nearBTS: false,
   },
   {
     id: 7,
-    title: "คอนโด 1 ห้องนอน อารีย์ ใกล้ BTS + คาเฟ่เยอะ",
-    type: "คอนโด",
-    zone: "อารีย์",
-    zoneKeys: ["อารีย์", "ari", "bts", "รถไฟฟ้า", "พหลโยธิน"],
+    title: "1-bedroom condo, Ari — by BTS, cafes everywhere",
+    type: "Condo",
+    zone: "Ari",
+    zoneKeys: ["ari", "bts", "transit", "phahon"],
     price: 25000,
     bedrooms: 1,
     area: 40,
-    tags: ["ติดรถไฟฟ้า", "คาเฟ่เยอะ", "เหมาะคนทำงาน", "เดินทางสะดวก", "ย่านฮิป", "เลี้ยงสัตว์ได้"],
+    tags: ["Near transit", "Cafes nearby", "Great for professionals", "Easy commute", "Pet-friendly"],
     nearBTS: true,
   },
   {
     id: 8,
-    title: "ทาวน์โฮม 3 ห้องนอน ประชาอุทิศ ราคาน่ารัก",
-    type: "ทาวน์โฮม",
-    zone: "ประชาอุทิศ / พระราม 2",
-    zoneKeys: ["ประชาอุทิศ", "พระราม 2", "ชานเมือง"],
+    title: "3-bedroom townhome, Prachauthit — great value",
+    type: "Townhome",
+    zone: "Prachauthit / Rama 2",
+    zoneKeys: ["prachauthit", "rama 2", "suburb"],
     price: 15000,
     bedrooms: 3,
     area: 130,
-    tags: ["ราคาประหยัด", "ที่จอดรถ", "เลี้ยงสัตว์ได้", "เหมาะครอบครัว", "โรงเรียนใกล้"],
+    tags: ["Budget-friendly", "Parking", "Pet-friendly", "Family-friendly", "Near school"],
     nearBTS: false,
   },
 ];
@@ -121,63 +121,54 @@ export type ParsedQuery = {
   budget: number | null;
   bedrooms: number | null;
   zoneHits: string[];
-  wantBTS: boolean;
-  wantPet: boolean;
-  wantGarden: boolean;
-  wantFamily: boolean;
-  wantCheap: boolean;
-  wantLuxury: boolean;
   keywords: string[];
 };
 
-// พาร์สข้อความภาษาธรรมชาติ (ไทย/อังกฤษ) → เงื่อนไขที่จับต้องได้
+// Parse a natural-language query into concrete conditions
 export function parseQuery(raw: string): ParsedQuery {
   const q = raw.toLowerCase();
 
-  // งบประมาณ: จับ "20000", "2 หมื่น", "20k", "ไม่เกิน 30000"
+  // budget: "20000", "20k", "under 30000"
   let budget: number | null = null;
   const kMatch = q.match(/(\d+(?:\.\d+)?)\s*k/);
-  const wanMatch = q.match(/(\d+(?:\.\d+)?)\s*หมื่น/);
   const numMatch = q.match(/(\d[\d,]{3,})/);
   if (kMatch) budget = Math.round(parseFloat(kMatch[1]) * 1000);
-  else if (wanMatch) budget = Math.round(parseFloat(wanMatch[1]) * 10000);
   else if (numMatch) budget = parseInt(numMatch[1].replace(/,/g, ""), 10);
 
-  // ห้องนอน
+  // bedrooms
   let bedrooms: number | null = null;
-  const bedMatch = q.match(/(\d+)\s*(ห้องนอน|ห้อง|นอน|bed|br)/);
+  const bedMatch = q.match(/(\d+)\s*-?\s*(bedroom|bed|br|room)/);
   if (bedMatch) bedrooms = parseInt(bedMatch[1], 10);
 
   const has = (...arr: string[]) => arr.some((k) => q.includes(k));
 
   const ZONES = [
-    "สุขุมวิท", "อ่อนนุช", "ทองหล่อ", "อารีย์", "รัชดา", "ห้วยขวาง", "ลาดพร้าว",
-    "บางนา", "นนทบุรี", "ราชพฤกษ์", "ประชาอุทิศ", "พระราม 2", "พหลโยธิน",
-    "sukhumvit", "onnut", "thonglor", "ari", "ratchada", "ladprao", "bangna",
+    "sukhumvit", "on nut", "onnut", "thonglor", "ari", "ratchada",
+    "huai khwang", "ladprao", "bangna", "nonthaburi", "ratchaphruek",
+    "prachauthit", "rama 2", "phahon",
   ];
   const zoneHits = ZONES.filter((z) => q.includes(z));
 
-  const wantBTS = has("bts", "mrt", "รถไฟฟ้า", "ใกล้รถไฟ", "เดินทางสะดวก", "ติดรถไฟ");
-  // หมายเหตุ: ไม่ใช้ "หมา" เดี่ยว ๆ เพราะเป็น substring ของ "เหมาะ" (เช่น "เหมาะครอบครัว") → false match
-  const wantPet = has("สัตว์", "เลี้ยงหมา", "แมว", "เลี้ยง", "pet");
-  const wantGarden = has("สวน", "garden", "พื้นที่นอก");
-  const wantFamily = has("ครอบครัว", "family", "ลูก", "โรงเรียน", "พ่อแม่");
-  const wantCheap = has("ประหยัด", "ถูก", "งบน้อย", "cheap", "budget", "นักศึกษา");
-  const wantLuxury = has("หรู", "luxury", "premium", "วิว", "high end", "ไฮเอนด์");
+  const wantBTS = has("bts", "mrt", "transit", "train", "station", "skytrain", "subway", "commute");
+  const wantPet = has("pet", "dog", "cat", "animal");
+  const wantGarden = has("garden", "yard", "outdoor");
+  const wantFamily = has("family", "kids", "children", "school");
+  const wantCheap = has("cheap", "affordable", "student", "low budget", "low-cost", "tight budget", "inexpensive");
+  const wantLuxury = has("luxury", "premium", "high-end", "upscale", "great view", "view");
 
   const keywords = [
-    wantBTS && "ติดรถไฟฟ้า",
-    wantPet && "เลี้ยงสัตว์ได้",
-    wantGarden && "มีสวน",
-    wantFamily && "เหมาะครอบครัว",
-    wantCheap && "ราคาประหยัด",
-    wantLuxury && "หรูหรา",
+    wantBTS && "Near transit",
+    wantPet && "Pet-friendly",
+    wantGarden && "Has garden",
+    wantFamily && "Family-friendly",
+    wantCheap && "Budget-friendly",
+    wantLuxury && "Luxury",
   ].filter(Boolean) as string[];
 
-  return { budget, bedrooms, zoneHits, wantBTS, wantPet, wantGarden, wantFamily, wantCheap, wantLuxury, keywords };
+  return { budget, bedrooms, zoneHits, keywords };
 }
 
-// การจับคู่แบบ hybrid: ฟิลเตอร์เชิงกฎ (งบ/ห้อง/โซน) + ความใกล้เชิงความหมาย (tag overlap)
+// Hybrid matching: rule filters (budget/beds/zone) + semantic-ish tag overlap
 export function matchListings(raw: string): { parsed: ParsedQuery; results: MatchResult[] } {
   const parsed = parseQuery(raw);
 
@@ -187,47 +178,47 @@ export function matchListings(raw: string): { parsed: ParsedQuery; results: Matc
     const misses: string[] = [];
     let weightSum = 0;
 
-    // งบประมาณ (น้ำหนัก 35)
+    // budget (weight 35)
     if (parsed.budget != null) {
       weightSum += 35;
       if (l.price <= parsed.budget) {
         score += 35;
-        reasons.push(`อยู่ในงบ ${parsed.budget.toLocaleString()} บาท (${l.price.toLocaleString()})`);
+        reasons.push(`Within budget THB ${parsed.budget.toLocaleString()} (THB ${l.price.toLocaleString()})`);
       } else if (l.price <= parsed.budget * 1.15) {
         score += 20;
-        reasons.push(`เกินงบเล็กน้อย (${l.price.toLocaleString()})`);
+        reasons.push(`Slightly over budget (THB ${l.price.toLocaleString()})`);
       } else {
-        misses.push(`เกินงบ (${l.price.toLocaleString()})`);
+        misses.push(`Over budget (THB ${l.price.toLocaleString()})`);
       }
     }
 
-    // ห้องนอน (น้ำหนัก 20)
+    // bedrooms (weight 20)
     if (parsed.bedrooms != null) {
       weightSum += 20;
       if (l.bedrooms === parsed.bedrooms) {
         score += 20;
-        reasons.push(`${l.bedrooms} ห้องนอนตรงตามต้องการ`);
+        reasons.push(`${l.bedrooms} bedrooms as requested`);
       } else if (Math.abs(l.bedrooms - parsed.bedrooms) === 1) {
         score += 10;
-        reasons.push(`${l.bedrooms} ห้องนอน (ใกล้เคียง)`);
+        reasons.push(`${l.bedrooms} bedrooms (close)`);
       } else {
-        misses.push(`${l.bedrooms} ห้องนอน`);
+        misses.push(`${l.bedrooms} bedrooms`);
       }
     }
 
-    // โซน (น้ำหนัก 25)
+    // zone (weight 25)
     if (parsed.zoneHits.length > 0) {
       weightSum += 25;
       const hit = parsed.zoneHits.some((z) => l.zoneKeys.includes(z));
       if (hit) {
         score += 25;
-        reasons.push(`ทำเลตรง: ${l.zone}`);
+        reasons.push(`Location match: ${l.zone}`);
       } else {
-        misses.push(`ทำเล ${l.zone}`);
+        misses.push(`Location: ${l.zone}`);
       }
     }
 
-    // ไลฟ์สไตล์/keyword overlap (น้ำหนัก 20 รวม)
+    // lifestyle / keyword overlap (weight 20 total)
     if (parsed.keywords.length > 0) {
       const per = 20 / parsed.keywords.length;
       weightSum += 20;
@@ -242,12 +233,10 @@ export function matchListings(raw: string): { parsed: ParsedQuery; results: Matc
       }
     }
 
-    // ถ้าไม่ระบุอะไรเลย ให้คะแนนกลาง ๆ ตามความนิยม (ติด BTS)
     if (weightSum === 0) {
       score = l.nearBTS ? 60 : 45;
-      reasons.push("แนะนำตามความนิยม (ยังไม่ระบุเงื่อนไข)");
+      reasons.push("Recommended (popular) — no filters set yet");
     } else {
-      // normalize เป็น 0-100 ตามน้ำหนักที่ผู้ใช้ระบุจริง
       score = Math.round((score / weightSum) * 100);
     }
 

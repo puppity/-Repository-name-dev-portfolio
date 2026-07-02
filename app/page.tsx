@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 import Turtle from "@/components/Turtle";
 import { PROJECTS, STACK_MATCH, type Project } from "@/lib/projects";
 
-// ⬇️ ข้อมูลจริง
+// ⬇️ real info
 const YOUR_NAME = "Nattapoom Prikmak";
 const CONTACT = { name: "Nattapoom P.", age: "29", tel: "08394563998" };
 
@@ -22,22 +22,22 @@ const STACK = [
 const APPROACH = [
   {
     title: "Matching layer",
-    body: "Extract ข้อมูลทรัพย์ด้วย LLM → สร้าง embedding เก็บใน Postgres (pgvector). ความต้องการผู้ซื้อแปลงเป็น embedding แล้วจับคู่แบบ hybrid: semantic similarity + ฟิลเตอร์เชิงกฎ และให้ LLM re-rank พร้อมสรุปเหตุผล.",
+    body: "Extract listing data with an LLM → build embeddings stored in Postgres (pgvector). A buyer's needs become an embedding too, then matching is hybrid: semantic similarity + rule filters, with an LLM re-ranking results and explaining why.",
   },
   {
     title: "Automation layer (n8n)",
-    body: "ข้อความจาก LINE/Messenger/WhatsApp → webhook → ตรวจ intent ด้วย LLM → ตอบอัตโนมัติ / ส่งแมตช์ทรัพย์ / นัดดูบ้าน → sync CRM + Google Calendar และ push แจ้งเตือน follow-up.",
+    body: "Messages from LINE/Messenger/WhatsApp → webhook → intent detection with an LLM → auto-reply / send matches / book a viewing → sync to CRM + Google Calendar and push follow-up reminders.",
   },
   {
-    title: "ทำมาแล้วจริง",
-    body: "สถาปัตยกรรม LINE → n8n → LLM → Postgres นี้ ผมทำจริงใน Turtle.Talking (deploy บน Coolify) และทำ semantic search ด้วย embeddings ใน UniClip มาแล้ว — ต่อยอดเป็นระบบอสังหาได้ทันที.",
+    title: "Already done for real",
+    body: "I've shipped this exact LINE → n8n → LLM → Postgres architecture in Turtle.Talking (deployed on Coolify), and built semantic search with embeddings in UniClip — so extending it to real estate is immediate.",
   },
 ];
 
 function ProjectCard({ p }: { p: Project }) {
   const body = (
     <div>
-      {p.featured && <span className="flag">รัน Production</span>}
+      {p.featured && <span className="flag">Live in Production</span>}
       <h3>{p.name}</h3>
       <p className="project-tag">{p.tagline}</p>
       <p className="project-problem">{p.problem}</p>
@@ -55,10 +55,10 @@ function ProjectCard({ p }: { p: Project }) {
       </div>
       {p.live ? (
         <a className="project-link" href={p.live} target="_blank" rel="noreferrer">
-          เปิดดูของจริง →
+          View it live →
         </a>
       ) : (
-        <span className="project-link muted">รายละเอียดเพิ่มเติมตอนสัมภาษณ์</span>
+        <span className="project-link muted">More details on request</span>
       )}
     </div>
   );
@@ -109,8 +109,8 @@ export default function Home() {
           </Reveal>
           <Reveal delay={220}>
             <p className="lead">
-              สร้างแพลตฟอร์มที่ขับเคลื่อนด้วย AI ตั้งแต่ต้นจนถึง production — เชื่อม n8n,
-              แพลตฟอร์มข้อความ, LLM และฐานข้อมูล มีผลงาน<strong>รันจริง</strong>ที่ verify กับผู้ใช้แล้ว.
+              I build AI-powered platforms end to end — connecting n8n, messaging platforms, LLMs and
+              databases. With work that&apos;s <strong>live in production</strong> and verified with real users.
             </p>
           </Reveal>
           <Reveal delay={280}>
@@ -119,13 +119,13 @@ export default function Home() {
           <Reveal delay={340}>
             <div className="cta-row">
               <a className="btn primary" href="#work">
-                ดูผลงาน
+                View Work
               </a>
               <a className="btn ghost" href="#demo">
-                ลองเดโม AI
+                Try the AI Demo
               </a>
               <a className="btn ghost" href="#contact">
-                ติดต่อ
+                Contact
               </a>
             </div>
           </Reveal>
@@ -157,10 +157,10 @@ export default function Home() {
           <Reveal>
             <div className="section-head">
               <div>
-                <h2>ระบบจับคู่อสังหาด้วย AI</h2>
+                <h2>AI Property Matcher</h2>
                 <p className="section-sub">
-                  พิมพ์ความต้องการเป็นภาษาคน → ระบบจัดอันดับทรัพย์ที่เหมาะที่สุดพร้อมเหตุผล
-                  (กดเล่นได้เลย ไม่ต้องล็อกอิน)
+                  Type what you want in plain language → it ranks the best-fit listings with reasons.
+                  Fully interactive, no login.
                 </p>
               </div>
               <span className="num">LIVE DEMO</span>
@@ -177,7 +177,7 @@ export default function Home() {
         <div className="wrap">
           <Reveal>
             <div className="section-head">
-              <h2>วิธีที่ผมจะสร้างระบบ</h2>
+              <h2>How I&apos;d build it</h2>
               <span className="num">APPROACH</span>
             </div>
           </Reveal>
@@ -200,7 +200,7 @@ export default function Home() {
         <div className="wrap">
           <Reveal>
             <div className="section-head">
-              <h2>ตรงสเปกงานนี้</h2>
+              <h2>Why I fit this role</h2>
               <span className="num">REQUIREMENTS ✓</span>
             </div>
           </Reveal>
@@ -224,7 +224,7 @@ export default function Home() {
       <footer className="footer" id="contact">
         <div className="wrap">
           <Reveal>
-            <h2 className="foot-name">พร้อมมาช่วยสร้างแพลตฟอร์ม AI ให้ทีมครับ</h2>
+            <h2 className="foot-name">Ready to help build your AI platform.</h2>
             <div className="contact-info">
               <div>
                 <span className="ci-label">Name</span>
@@ -243,12 +243,12 @@ export default function Home() {
             </div>
             <div className="cta-row">
               <a className="btn primary" href={`tel:${CONTACT.tel}`}>
-                โทรหาผม
+                Call me
               </a>
             </div>
             <p className="fine">
-              ยืนยัน: เคยใช้ n8n จริง — Turtle.Talking สร้างบน n8n ทั้งระบบ รัน production ·
-              Built with Next.js
+              Confirmed: real n8n experience — Turtle.Talking is built entirely on n8n and runs in
+              production · Built with Next.js
             </p>
           </Reveal>
         </div>

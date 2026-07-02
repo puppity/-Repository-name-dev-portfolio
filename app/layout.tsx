@@ -4,12 +4,12 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Full-Stack Developer Portfolio · Next.js · n8n · AI",
   description:
-    "Full-stack developer — Next.js, n8n automation, LINE/Messaging APIs, LLM integration, PostgreSQL/Firebase. ผลงานจริงที่ deploy แล้ว.",
+    "Full-stack developer — Next.js, n8n automation, LINE/Messaging APIs, LLM integration, PostgreSQL/Firebase. Shipped, production-ready work.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="th">
+    <html lang="en">
       <body>{children}</body>
     </html>
   );

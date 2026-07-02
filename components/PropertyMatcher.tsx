@@ -4,10 +4,10 @@ import { useMemo, useState } from "react";
 import { matchListings } from "@/lib/matcher";
 
 const EXAMPLES = [
-  "หาคอนโด 1 ห้องนอน ใกล้ BTS งบไม่เกิน 20000 เลี้ยงแมวได้",
-  "อยากได้บ้านเดี่ยวมีสวน 3 ห้องนอน เหมาะครอบครัว ย่านบางนา",
-  "งบน้อยประมาณ 1 หมื่น ใกล้รถไฟฟ้า เหมาะเริ่มทำงาน",
-  "คอนโดหรู ทองหล่อ 2 ห้องนอน วิวสวย เลี้ยงสัตว์ได้",
+  "1-bedroom condo near BTS, under 20000, pet friendly",
+  "Detached house with a garden, 3 bedrooms, family friendly, Bangna",
+  "Low budget around 10k, near transit, good to start out",
+  "Luxury condo in Thonglor, 2 bedrooms, great view, pet friendly",
 ];
 
 export default function PropertyMatcher() {
@@ -29,9 +29,9 @@ export default function PropertyMatcher() {
             if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) run();
           }}
           rows={2}
-          placeholder="พิมพ์ความต้องการเป็นภาษาธรรมชาติ เช่น: หาคอนโดใกล้ BTS งบ 2 หมื่น เลี้ยงแมวได้"
+          placeholder="Describe what you want in plain English, e.g. condo near BTS, budget 20k, pet friendly"
         />
-        <button onClick={run}>จับคู่ทรัพย์ →</button>
+        <button onClick={run}>Match →</button>
       </div>
 
       <div className="chips">
@@ -44,15 +44,15 @@ export default function PropertyMatcher() {
               setSubmitted(ex);
             }}
           >
-            {ex.length > 42 ? ex.slice(0, 42) + "…" : ex}
+            {ex.length > 44 ? ex.slice(0, 44) + "…" : ex}
           </button>
         ))}
       </div>
 
       <div className="parsed">
-        <span className="parsed-label">AI เข้าใจว่า:</span>
-        {parsed.budget != null && <span className="pill">งบ ≤ {parsed.budget.toLocaleString()}฿</span>}
-        {parsed.bedrooms != null && <span className="pill">{parsed.bedrooms} ห้องนอน</span>}
+        <span className="parsed-label">AI understood:</span>
+        {parsed.budget != null && <span className="pill">≤ THB {parsed.budget.toLocaleString()}</span>}
+        {parsed.bedrooms != null && <span className="pill">{parsed.bedrooms} bedrooms</span>}
         {parsed.zoneHits.map((z) => (
           <span key={z} className="pill">
             📍 {z}
@@ -63,9 +63,12 @@ export default function PropertyMatcher() {
             {k}
           </span>
         ))}
-        {parsed.budget == null && parsed.bedrooms == null && parsed.zoneHits.length === 0 && parsed.keywords.length === 0 && (
-          <span className="pill muted">ยังไม่ระบุเงื่อนไข — แนะนำตามความนิยม</span>
-        )}
+        {parsed.budget == null &&
+          parsed.bedrooms == null &&
+          parsed.zoneHits.length === 0 &&
+          parsed.keywords.length === 0 && (
+            <span className="pill muted">No filters yet — showing popular</span>
+          )}
       </div>
 
       <div className="results">
@@ -80,8 +83,8 @@ export default function PropertyMatcher() {
                 </span>
               </div>
               <div className="result-meta">
-                {r.listing.type} · {r.listing.bedrooms} นอน · {r.listing.area} ตร.ม. ·{" "}
-                {r.listing.price.toLocaleString()} ฿/เดือน · {r.listing.zone}
+                {r.listing.type} · {r.listing.bedrooms} bd · {r.listing.area} sqm · THB{" "}
+                {r.listing.price.toLocaleString()}/mo · {r.listing.zone}
               </div>
               <div className="reasons">
                 {r.reasons.map((reason, idx) => (
@@ -101,10 +104,11 @@ export default function PropertyMatcher() {
       </div>
 
       <p className="matcher-note">
-        เดโมนี้รัน client-side บนทรัพย์จำลอง 8 รายการ — พาร์สภาษาธรรมชาติเป็นเงื่อนไข แล้วให้คะแนนแบบ hybrid
-        (ฟิลเตอร์เชิงกฎ งบ/ห้อง/ทำเล + ความใกล้เชิงความหมายของไลฟ์สไตล์). ใน production เวอร์ชันจริง จะเปลี่ยน
-        keyword-overlap เป็น <strong>vector embeddings (pgvector)</strong> + ให้ <strong>LLM re-rank</strong> พร้อมสรุปเหตุผล
-        และรับ input จาก LINE/Messenger/WhatsApp ผ่าน <strong>n8n</strong>.
+        This demo runs client-side over 8 mock listings — it parses natural language into filters, then
+        scores each listing with a hybrid of rule filters (budget / beds / location) and lifestyle tag
+        similarity. In production this swaps keyword overlap for <strong>vector embeddings (pgvector)</strong>{" "}
+        with an <strong>LLM re-rank</strong>, taking input from LINE / Messenger / WhatsApp through{" "}
+        <strong>n8n</strong>.
       </p>
     </div>
   );

@@ -6,7 +6,7 @@ export default function Turtle() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="เต่าน้องเต่า — Turtle.Talking"
+      aria-label="Turtle — Turtle.Talking"
     >
       {/* ground shadow */}
       <ellipse className="t-shadow" cx="128" cy="168" rx="96" ry="10" />
